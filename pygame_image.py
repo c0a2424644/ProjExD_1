@@ -26,8 +26,10 @@ def main():
         if key_lst[pg.K_DOWN]:
             tori_rct.move_ip((0,1))
         if key_lst[pg.K_RIGHT]:
-            tori_rct.move_ip((1,0))
+            tori_rct.move_ip((2,0))#演習課題１
         if key_lst[pg.K_LEFT]:
+            tori_rct.move_ip((-1,0))
+        else:
             tori_rct.move_ip((-1,0))
 
         x = tmr % 3200 #練習６
