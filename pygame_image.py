@@ -17,20 +17,21 @@ def main():
     tori_rct.center = 300, 200 #練習１０ー２
     tmr = 0
     while True:
+        y = 0
+        z = 0
         for event in pg.event.get():
             if event.type == pg.QUIT: return
         key_lst = pg.key.get_pressed() #練習１０－３
         #print(key_lst)
         if key_lst[pg.K_UP]:#練習１０－４
-            tori_rct.move_ip((0,-1))
+            y -= 1
         if key_lst[pg.K_DOWN]:
-            tori_rct.move_ip((0,1))
+            y += 1
         if key_lst[pg.K_RIGHT]:
-            tori_rct.move_ip((2,0))#演習課題１
-        if key_lst[pg.K_LEFT]:
-            tori_rct.move_ip((-1,0))
+            z += 1
         else:
-            tori_rct.move_ip((-1,0))
+            z -= 1
+        tori_rct.move_ip(z,y)#演習課題２
 
         x = tmr % 3200 #練習６
         screen.blit(bg_img, [-x, 0])#練習３
