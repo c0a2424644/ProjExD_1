@@ -11,17 +11,17 @@ def main():
     clock  = pg.time.Clock()
     bg_img = pg.image.load("fig/pg_bg.jpg")
     tori_img = pg.image.load("fig/3.png") #練習１
-    tori_img = pg.transform.flip(tori_img, True, False)
+    tori_img = pg.transform.flip(tori_img, True, False)#練習２
     tmr = 0
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
 
         screen.blit(bg_img, [0, 0])
-        screen.blit(tori_img, [300,200])
+        screen.blit(tori_img, [300,200]) #練習４
         pg.display.update()
         tmr += 1        
-        clock.tick(10)
+        clock.tick(200)#練習５
 
 
 if __name__ == "__main__":
